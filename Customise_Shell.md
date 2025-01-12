@@ -7,52 +7,24 @@ Common shell options include:
 
     Bash: Default for many Linux systems.
     Zsh: Highly customizable with plugins (via oh-my-zsh).
-    
+
+- **Install Your Shell**:
+On most Unix-based systems, bash or zsh is pre-installed. To install a new shell:
+
+On Ubuntu: ``sudo apt update && sudo apt install zsh``
+
+
 - **Edit Configuration Files**
 
 Configuration files store shell settings. Depending on the shell:
 
     Bash:~/.bashrc or ~/.bash_profile
     Zsh: ~/.zshrc
-For the purpose of this project we will work with zsh.
-Edit this files using a text editor like ``nano``, ``vim``, or ``code (VSCode)``.
-```sh
-nano .zshrc
-```
+Edit these files using a text editor like ``nano``, ``vim``, or ``code (VSCode)``.
  
  - **Customize Prompt**
 
 Modify the prompt to include information like the username, hostname, working directory, or Git status.
-prompt
-
-This adds version control to your shell
-```she
-autoload -Uz vcs_info
-precmd() { vcs_info }
-```
-setup git branch details:
-```sh
-
-zstyle ':vcs_info:git:*' formats '%b '
-```
-That %b is the branch name variable
-
-add these two lines to put your prompt toget
-```sh
-setopt PROMPT_SUBST
-PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
-```
-
-```sh
-autoload -Uz vcs_info
-precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats '%b '
-setopt PROMPT_SUBST
-var=`hostname`
-PROMPT='%F{magenta}%$var \h%F{green}%*%f %F{blue}%~%f %F{red}$
-{vcs_info_msg_0_}%f$ '
-```
-
 
 -**Bash**
 in bash you can use the command   ``export PS1="\u@\h:\w$ "``
@@ -70,6 +42,9 @@ using the command ``PROMPT='%n@%m:%~%# '``
     For Bash: Use tools like ``bash-it`` or write custom scripts.
 
     For Zsh: Install ``oh-my-zsh`` and enable plugins.
+    ``sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"``
+- **Test and Reload**
+After editing configuration files, reload the shell to apply changes:``source ~/.zshrc``
 
 - **Set Environment Variables** 
 
@@ -80,10 +55,6 @@ Define environment variables in your shell configuration file:``export PATH=$PAT
 Create shortcuts for frequently used commands.e.g; 
 alias gc=``git clone``
 alias ll=``ls -la``
-alias docker = ``multipass exec myvm -- docker``
-alias gm=``git commit -s -m``
-alias update=``sudo apt update``
-
 
 - **Install Themes**
 

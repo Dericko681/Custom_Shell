@@ -14,11 +14,45 @@ Configuration files store shell settings. Depending on the shell:
 
     Bash:~/.bashrc or ~/.bash_profile
     Zsh: ~/.zshrc
-Edit these files using a text editor like ``nano``, ``vim``, or ``code (VSCode)``.
+For the purpose of this project we will work with zsh.
+Edit this files using a text editor like ``nano``, ``vim``, or ``code (VSCode)``.
+```sh
+nano .zshrc
+```
  
  - **Customize Prompt**
 
 Modify the prompt to include information like the username, hostname, working directory, or Git status.
+prompt
+
+This adds version control to your shell
+```she
+autoload -Uz vcs_info
+precmd() { vcs_info }
+```
+setup git branch details:
+```sh
+
+zstyle ':vcs_info:git:*' formats '%b '
+```
+That %b is the branch name variable
+
+add these two lines to put your prompt toget
+```sh
+setopt PROMPT_SUBST
+PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+```
+
+```sh
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+setopt PROMPT_SUBST
+var=`hostname`
+PROMPT='%F{magenta}%$var \h%F{green}%*%f %F{blue}%~%f %F{red}$
+{vcs_info_msg_0_}%f$ '
+```
+
 
 -**Bash**
 in bash you can use the command   ``export PS1="\u@\h:\w$ "``
@@ -46,6 +80,10 @@ Define environment variables in your shell configuration file:``export PATH=$PAT
 Create shortcuts for frequently used commands.e.g; 
 alias gc=``git clone``
 alias ll=``ls -la``
+alias docker = ``multipass exec myvm -- docker``
+alias gm=``git commit -s -m``
+alias update=``sudo apt update``
+
 
 - **Install Themes**
 

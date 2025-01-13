@@ -91,11 +91,16 @@ Define environment variables in your shell configuration file:``export PATH=$PAT
 - **Add Aliases**
 
 Create shortcuts for frequently used commands.e.g; 
-alias gc=``git clone``
-alias ll=``ls -la``
-alias docker = ``multipass exec myvm -- docker``
-alias gm=``git commit -s -m``
-alias update=``sudo apt update``
+
+. alias gc=``git clone``: primarily used to point to an existing repo and make a clone or copy of that repo at in a new directory, at another location
+
+. alias ll=``ls -la`` :lists directory contents in a long format, including hidden files
+
+. alias docker = ``multipass exec myvm -- docker`` :allows you to execute Docker commands within a Multipass virtual machine named myvm directly from your host machine’s command line
+
+. alias gm=``git commit -s -m`` :command in Git is used to commit changes to the local repository with a signed-off message and a commit message
+
+. alias update=``sudo apt update`` :updates the package information from the configured repositories on a Debian-based system like Ubuntu
 
 
 - **Install Themes**

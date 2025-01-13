@@ -11,21 +11,26 @@ Common shell options include:
 **Install Your Shell**:
 On most Unix-based systems, bash or zsh is pre-installed. To install a new shell:
 
-On Ubuntu: ``sudo apt update && sudo apt install zsh``
+On Ubuntu: 
+```sh 
+sudo apt update && sudo apt install zsh
+```
 
 - **Edit Configuration Files**
 
 Configuration files store shell settings. Depending on the shell:
 
-    Bash:~/.bashrc or ~/.bash_profile
-    Zsh: ~/.zshrc
-For the purpose of this project we will work with zsh.
+Bash:~/.bashrc or ~/.bash_profile
+Zsh: ~/.zshrc
+
+
 Edit this files using a text editor like ``nano``, ``vim``, or ``code (VSCode)``.
 ```sh
 nano .zshrc
-
-
-
+```
+or
+```sh
+code .zshrc
 ```
  
  - **Customize Prompt**
@@ -68,7 +73,10 @@ figlet "welcome , $NAME"
 
 
 -**Bash**
-in bash you can use the command   ``export PS1="\u@\h:\w$ "``
+in bash you can use the command   
+```sh
+export PS1="\u@\h:\w$ "
+```
 
 Variables:
 
@@ -79,7 +87,10 @@ Variables:
     ``\w``: Working directory
 
 -**Zsh**: Use ``PROMPT`` or themes from ``oh-my-zsh``.
-using the command ``PROMPT='%n@%m:%~%# '``
+using the command 
+```sh 
+PROMPT='%n@%m:%~%# '
+```
 
 -  **Install Plugins**
 
@@ -95,33 +106,62 @@ Define environment variables in your shell configuration file:``export PATH=$PAT
 
 Create shortcuts for frequently used commands.e.g; 
 
-. alias gc=``git clone``: primarily used to point to an existing repo and make a clone or copy of that repo at in a new directory, at another location
+```sh
+alias gc="git clone"
+```
+primarily used to point to an existing repo and make a clone or copy of that repo at in a new directory, at another location
 
-. alias ll=``ls -la`` :lists directory contents in a long format, including hidden files
+```sh
+ alias ll="ls -la" 
+ ```
+ it lists directory contents in a long format, including hidden files
 
-. alias docker = ``multipass exec myvm -- docker`` :allows you to execute Docker commands within a Multipass virtual machine named myvm directly from your host machine’s command line
+ ```sh
+alias docker = "multipass exec myvm -- docker" 
+```
+it allows you to execute Docker commands within a Multipass virtual machine named myvm directly from your host machine’s command line
 
-. alias gm=``git commit -s -m`` :command in Git is used to commit changes to the local repository with a signed-off message and a commit message
+```sh
+ alias gm="git commit -s -m"
+```
+command in Git is used to commit changes to the local repository with a signed-off message and a commit message
 
-. alias update=``sudo apt update`` :updates the package information from the configured repositories on a Debian-based system like Ubuntu
+```sh
+alias update="sudo apt update" 
+```
+updates the package information from the configured repositories on a Debian-based system like Ubuntu
 
+so we got:
+```sh
+alias gc="git clone"
+alias ll="ls -la" 
+alias docker="multipass exec myvm -- docker" 
+ alias gm="git commit -s -m"
+alias update="sudo apt update" 
+```
+**plugins**
+To install plugins like autosuggestions and autocompletions, we recommend this:
+https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df
 
 - **Install Themes**
 
     For Zsh: Use oh-my-zsh themes like ``Robby Russell``.
-    For Bash: Customize using ``PS1``
-
-- **Use Shell Scripts**
-
-Add useful custom scripts to automate tasks:
-
-Save scripts in a directory like ``~/scripts``.
-    Add the directory to your PATH:export ``PATH=$PATH:~/scripts``
-
-- **Enable Syntax Highlighting and Auto-Suggestions**
-
-    Bash: Use the ``bash-git-prompt`` or install ``bash-completion``.
-    Zsh: Install plugins like ``zsh-syntax-highlighting`` and ``zsh-autosuggestions``.
+    first of all install
+    ```sh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    ```
+    then 
+    ```sh
+    nano .zshrc
+    ```
+    set
+    ```sh
+    ZSH_THEME="robbyrussell"
+    ```
+    and source the file
+    ```sh
+    source .zshrc
+    ```
 
 - **Test and Reload**
 

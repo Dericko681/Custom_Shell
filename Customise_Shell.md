@@ -71,8 +71,11 @@ figlet "welcome , $NAME"
 in bash you can use the command   ``export PS1="\u@\h:\w$ "``
 
 Variables:
+
     ``\u:`` Username
+
     ``\h``: Hostname
+    
     ``\w``: Working directory
 
 -**Zsh**: Use ``PROMPT`` or themes from ``oh-my-zsh``.

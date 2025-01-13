@@ -24,8 +24,6 @@ Edit this files using a text editor like ``nano``, ``vim``, or ``code (VSCode)``
 ```sh
 nano .zshrc
 
-NAME=" BOSS"
-figlet "welcome , $NAME"
 
 
 ```
@@ -61,6 +59,11 @@ setopt PROMPT_SUBST
 var=`hostname`
 PROMPT='%F{magenta}%$var \h%F{green}%*%f %F{blue}%~%f %F{red}$
 {vcs_info_msg_0_}%f$ '
+
+NAME=" BOSS"
+figlet "welcome , $NAME"
+
+
 ```
 
 

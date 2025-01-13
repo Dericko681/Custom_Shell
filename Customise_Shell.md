@@ -23,6 +23,11 @@ For the purpose of this project we will work with zsh.
 Edit this files using a text editor like ``nano``, ``vim``, or ``code (VSCode)``.
 ```sh
 nano .zshrc
+
+NAME=" BOSS"
+figlet "welcome , $NAME"
+
+
 ```
  
  - **Customize Prompt**

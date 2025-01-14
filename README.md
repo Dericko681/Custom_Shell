@@ -14,12 +14,16 @@
 
 To customise your shell, follow the instructions in Customise_Shell.md
 
-To follow these instructions in a container, study and run the script in container.sh
+To follow these instructions in a vitual machine instance, study and run the script in multipass.sh
 
 ```sh
-./container.sh
+./multipass.sh
 ```
-
+To run a container, make sure to execute the script in multipass.sh
+Then run the script in docker.sh
+```sh
+./docker.sh
+```
 
 **Team:**
 

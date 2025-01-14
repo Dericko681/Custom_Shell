@@ -12,7 +12,16 @@
 3. Provide a Docker container to test the shell configuration.
 
 
-Team:
+To customise your shell, follow the instructions in Customise_Shell.md
+
+To follow these instructions in a container, study and run the script in container.sh
+
+```sh
+./container.sh
+```
+
+
+**Team:**
 
 Derick(abonghoderick@gmail.com)
 
